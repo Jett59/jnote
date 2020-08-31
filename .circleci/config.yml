@@ -7,11 +7,6 @@ jobs:
 
     steps:
       - checkout
-
-      - run: |
-          echo "$(git tag -l --points-at HEAD)" > ~/circle_tag.txt
-
-      - restore_cache:
-          key: circleci-werekitten-{{ checksum "pom.xml" }}
-
-      - run: mvn dependency:go-offline
+      -restore_cache:
+          key: circleci-jnote{{ checksum "pom.xml" }}
+      -run: mvn dependency:go-offline
