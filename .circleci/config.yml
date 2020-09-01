@@ -12,12 +12,10 @@ jobs:
           key: circleci-jnote{{ checksum "pom.xml" }}
 
       - run:
-          name: download remaining dependencies
-          command: mvn dependency:go-offline
+          name: test jnote
+          command: mvn test
+
       - save_cache:
           paths:
             ~/.m2
           key: circleci-jnote{{ checksum "pom.xml" }}
-      - run:
-          name: test jnote
-          command: mvn test
