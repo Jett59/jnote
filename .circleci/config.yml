@@ -32,6 +32,10 @@ jobs:
           key: circleci-jnote_packages{{ checksum "install_dependencies.sh" }}
 
       - run:
+          name: install dependencies
+          command: ./install_dependencies.sh
+
+      - run:
           name: download jdk 14
           command: ./download_jdk.sh
 
