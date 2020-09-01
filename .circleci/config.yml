@@ -35,7 +35,7 @@ jobs:
           name: download jdk 14
           command: ./download_jdk.sh
 
-      -run:
+      - run:
           name: unzip jdk
           command: ./unzip_jdk.sh
 
