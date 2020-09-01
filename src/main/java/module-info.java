@@ -1,3 +1,3 @@
 module com.mycodefu.jnote {
-	requires java.desktop
+	requires java.desktop;
 }
