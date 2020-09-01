@@ -29,7 +29,7 @@ jobs:
       - checkout
 
       - restore_cache:
-          key: circleci-jnote_packages{{ checksum "install_dependencies.sh" }}
+          key: circleci-jnote_packages-{{ checksum "download_jdk.sh" }}
 
       - run:
           name: install dependencies
@@ -42,6 +42,11 @@ jobs:
       - run:
           name: unzip jdk
           command: ./unzip_jdk.sh
+
+      - save_cache:
+          paths:
+            jdk-14
+          key: circleci-jnote_packages-{{ checksum "download_jdk.sh" }}
 
 release-filter: &release-filter
   filters:
