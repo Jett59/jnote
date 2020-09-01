@@ -8,7 +8,7 @@ jobs:
     steps:
       - checkout
 
-      -restore_cache:
+      - restore_cache:
           key: circleci-jnote{{ checksum "pom.xml" }}
 
-      -run: mvn dependency:go-offline
+      - run: mvn dependency:go-offline
