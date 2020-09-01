@@ -14,3 +14,9 @@ buildNumber.properties
 .settings/
 .project
 .classpath
+
+#zip files
+*.zip
+
+#jdk 14
+jdk-14.0.1/
