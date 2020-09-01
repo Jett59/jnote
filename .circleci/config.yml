@@ -14,3 +14,10 @@ jobs:
       - run:
           name: download remaining dependencies
           command: mvn dependency:go-offline
+       - save_cache:
+          paths:
+            ~/.m2
+          key: circleci-jnote{{ checksum "pom.xml" }}
+      - run:
+          name: test jnote
+          command: mvn test
