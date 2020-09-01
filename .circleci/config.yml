@@ -11,4 +11,6 @@ jobs:
       - restore_cache:
           key: circleci-jnote{{ checksum "pom.xml" }}
 
-      - run: mvn dependency:go-offline
+      - run:
+          name: download remaining dependencies
+          command: mvn dependency:go-offline
