@@ -19,3 +19,22 @@ jobs:
           paths:
             ~/.m2
           key: circleci-jnote{{ checksum "pom.xml" }}
+
+  build-installer:
+    machine:
+      image: "windows-server-2019-vs2019:stable"
+      resource_class: "windows.medium"
+      shell: bash.exe
+    steps:
+      - checkout
+
+      - restore_cache:
+          key: circleci-jnote_packages{{ checksum "install_dependencies.sh" }}
+
+      - run:
+          name: download jdk 14
+          command: ./download_jdk.sh
+
+      -run:
+          name: unzip jdk
+          command: ./unzip_jdk.sh
