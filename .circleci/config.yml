@@ -45,8 +45,16 @@ jobs:
 
       - save_cache:
           paths:
-            jdk-14
+            jdk-14.0.1
           key: circleci-jnote_packages-{{ checksum "download_jdk.sh" }}
+
+      - run:
+          name: build installer
+          command: ./package.sh
+
+      - store_artifacts
+          path: ./target/installer/jnote-beta.msi
+          destination: jnote-beta.msi
 
 release-filter: &release-filter
   filters:
