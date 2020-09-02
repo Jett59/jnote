@@ -52,7 +52,7 @@ jobs:
           name: build installer
           command: ./package.sh
 
-      - store_artifacts
+      - store_artifacts:
           path: ./target/installer/jnote-beta.msi
           destination: jnote-beta.msi
 
