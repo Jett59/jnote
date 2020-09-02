@@ -16,7 +16,7 @@ mvn clean package
 
 ${JPACKAGE_HOME}/bin/jpackage \
 --type msi\
--d ./target/installer
+-d ./target/installer/
 --name jnote \
 --input ./target/release-directory \
 --description "java note taking software" \
