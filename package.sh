@@ -15,7 +15,7 @@ function mvn {
 mvn clean package
 
 ${JPACKAGE_HOME}/bin/jpackage \
---type msi\
+--type msi \
 -d ./target/installer \
 --name jnote \
 --input ./target/release-directory \
