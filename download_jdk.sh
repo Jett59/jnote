@@ -3,7 +3,7 @@ set +x
 
 JDK_14_VERSION_NUMBER=30
 JDK_14_VERSION=openjdk-14-ea+${JDK_14_VERSION_NUMBER}_windows-x64_bin.zip
-JDK_14_EXTRACTED_PATH=jdk-14
+JDK_14_EXTRACTED_PATH=jdk-14.0.1
 
 if [[ ! -e JDK_14_EXTRACTED_PATH ]]; then
   echo "downloading ${JDK_14_VERSION}"
