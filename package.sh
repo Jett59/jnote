@@ -16,11 +16,11 @@ mvn clean package
 
 ${JPACKAGE_HOME}/bin/jpackage \
 --type msi\
--d ./target/installer/
+-d ./target/installer \
 --name jnote \
 --input ./target/release-directory \
 --description "java note taking software" \
---app-version beta
+--app-version beta \
 --copyright "2020 Jett Thompson" \
 --vender "Jett Thompson" \
 --main-jar jnote.jar \
