@@ -22,7 +22,7 @@ ${JPACKAGE_HOME}/bin/jpackage \
 --description "java note taking software" \
 --app-version beta \
 --copyright "2020 Jett Thompson" \
---vender "Jett Thompson" \
+--vendor "Jett Thompson" \
 --main-jar jnote.jar \
 --win-shortcut \
 --win-menu \
