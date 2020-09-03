@@ -20,7 +20,7 @@ ${JPACKAGE_HOME}/bin/jpackage \
 --name jnote \
 --input ./target/release-directory \
 --description "java note taking software" \
---app-version beta \
+--app-version 64 \
 --copyright "2020 Jett Thompson" \
 --vendor "Jett Thompson" \
 --main-jar jnote.jar \
