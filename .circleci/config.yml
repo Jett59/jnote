@@ -53,8 +53,8 @@ jobs:
           command: ./package.sh
 
       - store_artifacts:
-          path: ./target/installer/jnote-beta.msi
-          destination: jnote-beta.msi
+          path: ./target/installer/jnote-1.0.msi
+          destination: jnote-64.msi
 
 release-filter: &release-filter
   filters:
