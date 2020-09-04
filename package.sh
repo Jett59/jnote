@@ -28,3 +28,5 @@ ${JPACKAGE_HOME}/bin/jpackage \
 --win-menu \
 --win-dir-chooser \
 --verbose
+
+cp ./target/installer/jnote-1.0.msi ~/jnote-64.msi
