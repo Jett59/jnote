@@ -65,8 +65,8 @@ jobs:
           destination: jnote-64.msi
 
   publish-release:
-    - image:
-      docker: cibuilds/github:0.10
+    docker:
+      - image: cibuilds/github:0.10
     steps:
       - attach_workspace:
           @: ./workspace
