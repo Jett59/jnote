@@ -81,7 +81,7 @@ jobs:
                 -c "${CIRCLE_SHA1}" \
                 -replace \
                 "${CIRCLE_TAG}" \
-                "/root/project/artifacts/project/target/installer/"
+                "/root/project/workspace/project/target/installer/"
 
 release-filter: &release-filter
   filters:
