@@ -64,7 +64,7 @@ jobs:
           path: ./target/installer/jnote-1.0.msi
           destination: jnote-64.msi
 
-      - persist_to_workspace
+      - persist_to_workspace:
           root: ~/
           paths: jnote-64.msi
 
