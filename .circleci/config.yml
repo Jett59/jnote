@@ -8,6 +8,10 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: save tag
+          command:           echo "$(git tag -l --points-at HEAD)" > ~/tag.txt
+
       - restore_cache:
           key: circleci-jnote{{ checksum "pom.xml" }}
 
@@ -19,6 +23,10 @@ jobs:
           paths:
             ~/.m2
           key: circleci-jnote{{ checksum "pom.xml" }}
+
+      - persist_to_workspace:
+          root: ~/
+          paths: tag.txt
 
   build-installer:
     machine:
@@ -56,6 +64,21 @@ jobs:
           path: ./target/installer/jnote-1.0.msi
           destination: jnote-64.msi
 
+  publish-release:
+    - image:
+      - image: cibuilds/github:0.10
+    steps:
+      - attach_workspace:
+          @: ./workspace
+
+            ghr -t "${GITHUB_TOKEN}" \
+                -u "${CIRCLE_PROJECT_USERNAME}" \
+                -r "${CIRCLE_PROJECT_REPONAME}" \
+                -c "${CIRCLE_SHA1}" \
+                -replace \
+                "${CIRCLE_TAG}" \
+                "/root/project/artifacts/project/target/installer/"
+
 release-filter: &release-filter
   filters:
     # ignore any commit on any branch by default
@@ -77,3 +100,7 @@ workflows:
           <<: *release-filter
           requires:
             - build
+      - publish-release:
+          <<: *release-filter
+          requires:
+            - build-installer
