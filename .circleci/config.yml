@@ -69,7 +69,7 @@ jobs:
       - image: cibuilds/github:0.10
     steps:
       - attach_workspace:
-          @: ./workspace
+          at: ./workspace
 
             ghr -t "${GITHUB_TOKEN}" \
                 -u "${CIRCLE_PROJECT_USERNAME}" \
