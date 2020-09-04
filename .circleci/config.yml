@@ -85,7 +85,7 @@ jobs:
                 -c "${CIRCLE_SHA1}" \
                 -replace \
                 "${CIRCLE_TAG}" \
-                "/root/project/workspace/project/target/installer/"
+                "/root/project/workspace/jnote-64.msi"
 
 release-filter: &release-filter
   filters:
