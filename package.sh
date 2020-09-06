@@ -24,6 +24,8 @@ ${JPACKAGE_HOME}/bin/jpackage \
 --copyright "2020 Jett Thompson" \
 --vendor "Jett Thompson" \
 --main-jar jnote.jar \
+--module-path ./target/release-directory/lib \
+--add-modules javafx.controls \
 --win-shortcut \
 --win-menu \
 --win-dir-chooser \

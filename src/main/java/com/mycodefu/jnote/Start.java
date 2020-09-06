@@ -6,20 +6,18 @@ import java.awt.Toolkit;
 
 import javax.swing.*;
 
-public class Start extends JPanel{
-/**
-	 * default uid
-	 */
-	private static final long serialVersionUID = 1L;
+import javafx.application.Application;
+import javafx.stage.Stage;
 
-public static void main(String[] args) {
-	Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
-	Start window = new Start();
-	JFrame frame = new JFrame("window");
-	frame.setBounds(0, 0, screenSize.width, screenSize.height);
-	frame.add(window);
-	window.setBackground(Color.BLUE);
-	frame.setDefaultCloseOperation(3);
-	frame.setVisible(true);
-}
+public class Start extends Application{
+	public static void main(String[] args) {
+		Application.launch(args);
+	}
+
+	@Override
+	public void start(Stage stage) throws Exception {
+		stage.setFullScreen(true);
+		stage.setTitle("window");
+		stage.show();
+	}
 }
