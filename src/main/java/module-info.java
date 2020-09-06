@@ -1,5 +1,4 @@
 module com.mycodefu.jnote {
-	requires java.desktop;
-	requires javafx.graphics;
+	requires javafx.controls;
 	exports com.mycodefu.jnote;
 }
