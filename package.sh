@@ -4,6 +4,7 @@ set +x
 JDK_14_EXTRACTED_PATH=jdk-14.0.1
 
 export JPACKAGE_HOME=./${JDK_14_EXTRACTED_PATH}
+export JAVA_HOME=${JPACKAGE_HOME}
 export PATH=$JAVA_HOME/bin:$PATH
 export PATH=/c/Users/circleci/project/Wix.Toolset.3.9.1208.0/tools/wix:$PATH
 export MAVEN_OPTS=-"Xmx3072m -XX:MaxPermSize=512m -XX:+CMSClassUnloadingEnabled -XX:-UseGCOverheadLimit"
